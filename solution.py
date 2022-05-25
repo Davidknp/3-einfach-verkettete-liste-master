@@ -35,7 +35,7 @@ class OSTimeline:
 			self.head = newOS
 			return True
 		else:
-			while currentNode.next.releaseDate < newOS.releaseDate:
+			while currentNode.next is not None and currentNode.next.releaseDate < newOS.releaseDate:
 				
 				if newOS.releaseDate == currentNode.releaseDate:
 					return False
@@ -43,13 +43,10 @@ class OSTimeline:
 					currentNode = currentNode.next
 
 			newOS.next = currentNode.next
-			currentNode.next = newOS #temp var??? 
-			# return False doesnt work 
-			#return True 
+			currentNode.next = newOS 
+			return True 
 			
-					#prev Node? 
+					
 
 
-			# TODO: Implementieren Sie Fall 2 und 3 wie in der Aufgabenstellung beschrieben!
-			#ein OS wird zwischen zwei Elementen oder am Ende eingefügt
-			#return False wenn Jahr schon vorhanden onst True	
+			
