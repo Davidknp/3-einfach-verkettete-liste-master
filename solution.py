@@ -35,23 +35,17 @@ class OSTimeline:
 			self.head = newOS
 			return True
 		else:
-			while currentNode is not None and currentNode.next.releaseDate < newOS.releaseDate:
-
+			while currentNode.next.releaseDate < newOS.releaseDate:
+				
 				if newOS.releaseDate == currentNode.releaseDate:
 					return False
-
-				"""if newOS.releaseDate < currentNode.next.releaseDate: 
+				else:
 					currentNode = currentNode.next
-					#add newOS between 
-					currentNode.next = newOS
-					newOS.next = currentNode"""
-
-				currentNode = currentNode.next
 
 			newOS.next = currentNode.next
 			currentNode.next = newOS #temp var??? 
 			# return False doesnt work 
-			return True 
+			#return True 
 			
 					#prev Node? 
 
